@@ -3,77 +3,7 @@
 <head>
     <title>Find Your Perfect Match</title>
     <style>
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #ff69b4;
-            color: white;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero {
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .offer {
-            text-align: center;
-            padding: 20px;
-            background-color: #ffcc00;
-            color: black;
-        }
-
-        .testimonials {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .testimonial {
-            margin: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #ff69b4;
-            color: white;
-        }
-
-.testimonial {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-.testimonial img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-            }
+        /* ... your existing CSS styles ... */
     </style>
 </head>
 <body>
@@ -143,7 +73,6 @@ function updateCountdown() {
     countdown--;
 }
 
-// Initialize the countdown interval
 const countdownInterval = setInterval(updateCountdown, 1000);
 
 joinForm.addEventListener('submit', (event) => {
@@ -154,14 +83,14 @@ joinForm.addEventListener('submit', (event) => {
 
     // Validate name and phone number here
 
-
     // Send name and phone number to your CPA network or perform other actions
 
     // Set the last submission time
     localStorage.setItem('lastSubmissionTime', Date.now());
 
-    // Show a pop-up message and redirect
-    alert("Please complete the offer to join.");
+    // Redirect to the specified URL
     window.location.href = "https://cutt.ly/LeTtQHiJ";
 });
-</script>
+    </script>
+</body>
+</html>
