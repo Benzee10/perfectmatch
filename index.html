@@ -59,6 +59,21 @@
             background-color: #ff69b4;
             color: white;
         }
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+            }
     </style>
 </head>
 <body>
@@ -77,35 +92,82 @@
             <h3>Limited Time Offer: Join Now and Get 3 Months Free!</h3>
             <p>Don't miss out on this incredible opportunity.</p>
             <form id="join-form">
-                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="tel" id="phone" placeholder="Your Phone Number" required>
                 <button type="submit">Join Now</button>
             </form>
+            <p id="countdown"></p>
         </section>
         <section class="testimonials">
             <h2>What Our Members Say</h2>
             <div class="testimonial">
+                <img src="testimonial1.jpg" alt="Testimonial 1">
                 <p>"I met the love of my life on this amazing dating site."</p>
                 <span>- John Doe</span>
             </div>
-            </section>
+            <div class="testimonial">
+                <img src="testimonial2.jpg" alt="Testimonial 2">
+                <p>"I've never had so much fun online dating."</p>
+                <span>- Jane Smith</span>
+            </div>
+            <div class="testimonial">
+                <img src="testimonial3.jpg" alt="Testimonial 3">
+                <p>"I found my perfect match within a week of joining."</p>
+                <span>- Alex Lee</span>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Your Dating Site</p>
     </footer>
     <script>
         const joinForm = document.getElementById('join-form');
+const countdownElement = document.getElementById('countdown');
 
-        joinForm.addEventListener('submit', (event) => {
-            event.preventDefault();
+// Set the countdown timer for 1 week (604800 seconds)
+let countdown = 604800;
 
-            const email = document.getElementById('email').value;
+function updateCountdown() {
+    const days = Math.floor(countdown / (60 * 60 * 24));
+    const hours = Math.floor((countdown % (60 * 60 * 24)) / (60 * 60));
+    const minutes = Math.floor((countdown % (60 * 60)) / 60);
+    const seconds = countdown % 60;
 
-            // Validate email address here (e.g., using a regular expression)
+    countdownElement.textContent = `Offer Expires in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-            // Send email to your CPA network or perform other actions
+    if (countdown <= 0) {
+        clearInterval(countdownInterval);
+        countdownElement.textContent = "Offer Expired";
+    }
 
-            alert('Thank you for joining!');
-        });
+    countdown--;
+}
+
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+joinForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+
+    // Validate name and phone number here
+
+    // Check if the user has already submitted within the last week
+    const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+    if (lastSubmissionTime && Date.now() - parseInt(lastSubmissionTime) < 604800) {
+        alert("You can only submit once a week.");
+        return;
+    }
+
+    // Send name and phone number to your CPA network or perform other actions
+
+    // Set the last submission time
+    localStorage.setItem('lastSubmissionTime', Date.now());
+
+    // Show a pop-up message to complete the offer
+    alert("Please complete the offer to join.");
+});
     </script>
 </body>
 </html>
