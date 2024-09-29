@@ -3,7 +3,7 @@
 <head>
     <title>Find Your Perfect Match</title>
     <style>
-        body {
+body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
         }
@@ -150,26 +150,3 @@ joinForm.addEventListener('submit', (event) => {
 
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-
-    // Validate name and phone number here
-
-    // Check if the user has already submitted within the last week
-    const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
-    if (lastSubmissionTime && Date.now() - parseInt(lastSubmissionTime) < 604800) {
-        alert("You can only submit once a week.");
-        return;
-    }
-
-    // Send name and phone number to your CPA network or perform other actions
-
-    // Set the last submission time
-    localStorage.setItem('lastSubmissionTime', Date.now());
-
-    // ... rest of your JavaScript code ...
-
-// Show a pop-up message to complete the offer and redirect
-alert("Please complete the offer to join.");
-window.location.href = "https://your-redirect-url.com";
-    </script>
-</body>
-</html>
