@@ -143,6 +143,7 @@ function updateCountdown() {
     countdown--;
 }
 
+// Initialize the countdown interval
 const countdownInterval = setInterval(updateCountdown, 1000);
 
 joinForm.addEventListener('submit', (event) => {
@@ -150,3 +151,25 @@ joinForm.addEventListener('submit', (event) => {
 
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
+
+    // Validate name and phone number here
+
+    // Check if the user has already submitted within the last week
+    const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+    if (lastSubmissionTime && Date.now() - parseInt(lastSubmissionTime) < 604800) {
+        alert("You can only submit once a week.");
+        return;
+    }
+
+    // Send name and phone number to your CPA network or perform other actions
+
+    // Set the last submission time
+    localStorage.setItem('lastSubmissionTime', Date.now());
+
+    // Show a pop-up message and redirect after a slight delay
+    alert("Please complete the offer to join.");
+    setTimeout(() => {
+        window.location.href = "https://cutt.ly/LeTtQHiJ";
+    }, 500); // Adjust the delay as needed
+});
+</script>
