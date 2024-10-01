@@ -29,8 +29,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-    flex-direction: column;
-    align-items: center;
         }
 
         .gallery-item img {
@@ -45,17 +43,17 @@
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%); /* Center the button */
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff69b4; /* Pink color */
+            padding: 15px 30px;
+            border: 2px solid #3e8e41; /* Green border */
+            background-color: #4CAF50; /* Green color */
             color: white;
             cursor: pointer;
             font-size: 18px;
+            transition: background-color 0.3s ease; /* Add a smooth transition */
         }
 
         .get-number-button:hover {
-            background-color: #ff4d94; /* Darker pink on hover */
+            background-color: #3e8e41;
         }
 
         /* Randomize colors for individual gallery items */
@@ -73,7 +71,7 @@
     </div>
     <script>
         const container = document.querySelector('.container');
-        const imageUrls = [ // Array of image URLs
+        const imageUrls = [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk2oRL9_28uRbRLjHC3R7wQWeaDTAS0ERxQ&usqp=CAU",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuEFmLjhWUJdHH03Ope9Do_4J9fv4pXG14Vw&usqp=CAU",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBXhnDCQ4SAZbX4LI9ONUuGm32coMFKp23A&usqp=CAU",
@@ -85,8 +83,6 @@
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdn4qJOODnWt2Akf9ySeVv8GwqZ8j8RN7Nw&usqp=CAU",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_6sPQ14wS2MkygOoT7prOh7o-sEuk1eylKA&usqp=CAU",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcN_RfD44TzHjPMZ83AVaC5Scs-rj4LvgkMA&usqp=CAU",
-            
-            // Add more images as desired
         ];
 
         function createGalleryItem(imageUrl) {
@@ -122,11 +118,11 @@
 
         const shuffledImages = shuffle(imageUrls); // Randomize image order
 
-// Display only the first 4 images
-shuffledImages.slice(0, 2).forEach(imageUrl => {
-    const galleryItem = createGalleryItem(imageUrl);
-    container.appendChild(galleryItem);
-});
+        // Display only the first 4 images
+        shuffledImages.slice(0, 4).forEach(imageUrl => {
+            const galleryItem = createGalleryItem(imageUrl);
+            container.appendChild(galleryItem);
+        });
     </script>
 </body>
 </html>
