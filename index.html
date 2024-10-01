@@ -1,166 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Find Your Perfect Match</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Gallery</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
             background-color: #f5f5f5;
+            filter: blur(5px); /* Add blur effect */
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #ff69b4;
-            color: white;
-        }
-
-        main {
-            max-width: 800px;
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+            gap: 20px;
         }
 
-        .hero {
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .offer {
-            text-align: center;
-            padding: 20px;
-            background-color: #ffcc00;
-            color: black;
-        }
-
-        .testimonials {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .testimonial {
-            margin: 20px;
-            border: 1px solid #ccc;
+        .gallery-item {
+            background-color: #fff;
             padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            position: relative; /* Needed for button positioning */
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #ff69b4;
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .get-number-button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%); /* Center the button */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4; /* Pink color */
             color: white;
+            cursor: pointer;
         }
 
-.testimonial {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
+        .get-number-button:hover {
+            background-color: #ff4d94; /* Darker pink on hover */
+        }
 
-.testimonial img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
+        /* Randomize colors for individual gallery items */
+        .gallery-item:nth-child(odd) {
+            background-color: #f0f8ff;  /* Light blue */
+        }
+
+        .gallery-item:nth-child(even) {
+            background-color: #ffe0f0;  /* Light pink */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover Love Today</h1>
-    </header>
-    <main>
-        <section class="hero">
-            <img src="https://img.freepik.com/free-photo/high-angle-couple-taking-selfie_23-2150329557.jpg" alt="Happy Couple">
-            <div class="hero-text">
-                <h2>Join the Largest Dating Community</h2>
-                <p>Meet someone special and find your perfect match.</p>
-            </div>
-        </section>
-        <section class="offer">
-            <h3>Limited Time Offer: Join Now and Get 3 Months Free!</h3>
-            <p>Don't miss out on this incredible opportunity.</p>
-            <form id="join-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="tel" id="phone" placeholder="Your Phone Number" required>
-                <button type="submit">Join Now</button>
-            </form>
-            <p id="countdown"></p>
-        </section>
-        <section class="testimonials">
-            <h2>What Our Members Say</h2>
-            <div class="testimonial">
-                <img src="https://i0.wp.com/www.sergiogarciaheadshots.com/wp-content/uploads/2017/11/top-headshots-los-angeles-good-headshot-photographer-near-me-headshots-la-sergio-garcia-headshots-175-scaled.jpg" alt="Testimonial 1">
-                <p>"I met the love of my life on this amazing dating site."</p>
-                <span>- John Doe</span>
-            </div>
-            <div class="testimonial">
-                <img src="https://images.squarespace-cdn.com/content/v1/6204821bfe06b76898b431c5/1661872946038-HFUT1IX9DB99YK644R7F/AW5A3965+copy.jpg" alt="Testimonial 2">
-                <p>"I've never had so much fun online dating."</p>
-                <span>- Jane Smith</span>
-            </div>
-            <div class="testimonial">
-                <img src="https://img.freepik.com/free-photo/front-view-man-with-beard-posing_23-2149438512.jpg" alt="Testimonial 3">
-                <p>"I found my perfect match within a week of joining."</p>
-                <span>- Alex Lee</span>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Dating Site</p>
-    </footer>
+    <div class="container">
+        </div>
     <script>
-        const joinForm = document.getElementById('join-form');
-const countdownElement = document.getElementById('countdown');
+        const container = document.querySelector('.container');
+        const imageUrls = [ // Array of image URLs
+            "https://picsum.photos/id/237/200/300",
+            "https://picsum.photos/id/1074/200/300",
+            "https://picsum.photos/id/238/200/300",
+            "https://picsum.photos/id/1024/200/300",
+            // Add more images as desired
+        ];
 
-// Set the countdown timer for 1 week (604800 seconds)
-let countdown = 604800;
+        function createGalleryItem(imageUrl) {
+            const item = document.createElement('div');
+            item.classList.add('gallery-item');
 
-function updateCountdown() {
-    const days = Math.floor(countdown / (60 * 60 * 24));
-    const hours = Math.floor((countdown % (60 * 60 * 24)) / (60 * 60));
-    const minutes = Math.floor((countdown % (60 * 60)) / 60);
-    const seconds = countdown % 60;
+            const image = document.createElement('img');
+            image.src = imageUrl;
+            image.alt = "Gallery Image";
 
-    countdownElement.textContent = `Offer Expires in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            const button = document.createElement('button');
+            button.textContent = "Get My Number";
+            button.addEventListener('click', () => {
+                window.location.href = "https://beacons.ai/talkwithme";
+            });
 
-    if (countdown <= 0) {
-        clearInterval(countdownInterval);
-        countdownElement.textContent = "Offer Expired";
-    }
+            item.appendChild(image);
+            item.appendChild(button);
 
-    countdown--;
-}
+            return item;
+        }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
+        function shuffle(array) {
+            // Shuffle array randomly
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                [array[currentIndex - 1], array[randomIndex]] = [array[randomIndex], array[currentIndex - 1]];
+                currentIndex--;
+            }
+            return array;
+        }
 
-joinForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+        const shuffledImages = shuffle(imageUrls); // Randomize image order
 
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-
-    // Validate name and phone number here
-
-    // Send name and phone number to your CPA network or perform other actions
-
-    // Set the last submission time
-    localStorage.setItem('lastSubmissionTime', Date.now());
-
-    // Redirect to the specified URL
-    window.location.href = "https://datingredirect.vercel.app/";
-});
-    </script>
-</body>
-</html>
+        shuffledImages.forEach(imageUrl => {
+            const galleryItem = createGalleryItem(imageUrl);
