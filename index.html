@@ -116,10 +116,11 @@
 
         const shuffledImages = shuffle(imageUrls); // Randomize image order
 
-        shuffledImages.forEach(imageUrl => {
-            const galleryItem = createGalleryItem(imageUrl);
-            container.appendChild(galleryItem);
-        });
+// Display only the first 4 images
+shuffledImages.slice(0, 2).forEach(imageUrl => {
+    const galleryItem = createGalleryItem(imageUrl);
+    container.appendChild(galleryItem);
+});
     </script>
 </body>
 </html>
