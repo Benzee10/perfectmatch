@@ -65,7 +65,7 @@
 </head>
 <body>
     <div class="container">
-        </div>
+    </div>
     <script>
         const container = document.querySelector('.container');
         const imageUrls = [ // Array of image URLs
@@ -111,3 +111,8 @@
 
         shuffledImages.forEach(imageUrl => {
             const galleryItem = createGalleryItem(imageUrl);
+            container.appendChild(galleryItem);
+        });
+    </script>
+</body>
+</html>
