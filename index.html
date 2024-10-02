@@ -3,126 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Someone Special</title>
+    <title>See More Photos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             background-color: #f5f5f5;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
-            gap: 20px;
+            text-align: center;
         }
 
-        .gallery-item {
-            background-color: #fff;
-            padding: 10px;
+        #photo {
+            width: 80%;
+            max-width: 800px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            position: relative; /* Needed for button positioning */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-item img {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .get-number-button {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%); /* Center the button */
+        #subscribe-btn {
             padding: 15px 30px;
-            border: 2px solid #3e8e41; /* Green border */
-            background-color: #4CAF50; /* Green color */
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
             color: white;
             cursor: pointer;
-            font-size: 28px;
-            transition: background-color 0.3s ease; /* Add a smooth transition */
+            font-size: 18px;
+            margin-top: 20px;
         }
 
-        .get-number-button:hover {
+        #subscribe-btn:hover {
             background-color: #3e8e41;
-        }
-
-        /* Randomize colors for individual gallery items */
-        .gallery-item:nth-child(odd) {
-            background-color: #f0f8ff;  /* Light blue */
-        }
-
-        .gallery-item:nth-child(even) {
-            background-color: #ffe0f0;  /* Light pink */
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img id="photo" src="" alt="❤️‍🔥">
+        <button id="subscribe-btn">Subscribe Now to See More</button>
     </div>
     <script>
-        const container = document.querySelector('.container');
-        const imageUrls = [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk2oRL9_28uRbRLjHC3R7wQWeaDTAS0ERxQ&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuEFmLjhWUJdHH03Ope9Do_4J9fv4pXG14Vw&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBXhnDCQ4SAZbX4LI9ONUuGm32coMFKp23A&usqp=CAU",
-            "https://i.pinimg.com/550x/6b/df/7a/6bdf7a2eec1d0f7665de1b93585a3f27.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCLFX5_86aEq83Kin-UoZis0pQPAHYJNnRLQ&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpgnhqzxHf-Zfw9V6D8KC48aKR4M6FIPhV9g&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTEzyESzcSl6yF190rDYx19WOsGofwzere_A&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw94d6WkEacQt9TKhvp6YjbjS_nDV21Oxvgw&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdn4qJOODnWt2Akf9ySeVv8GwqZ8j8RN7Nw&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_6sPQ14wS2MkygOoT7prOh7o-sEuk1eylKA&usqp=CAU",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcN_RfD44TzHjPMZ83AVaC5Scs-rj4LvgkMA&usqp=CAU",
+        const photoElement = document.getElementById('photo');
+        const subscribeBtn = document.getElementById('subscribe-btn');
+        const photoUrls = [
+                     'https://cdn.elitebabes.com/content/211253/0005-01_1200.jpg',
+            'https://cdn.elitebabes.com/content/211253/0005-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/240142/0001-01_1200.jpg',
+            'https://cdn.elitebabes.com/content/240142/0001-02_1200.jpg',            
+            'https://cdn.elitebabes.com/content/240142/0001-05_1800.jpg',
+            'https://cdn.elitebabes.com/content/240142/0001-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/180810/0005-01.jpg',
+            'https://cdn.elitebabes.com/content/240639/0008-01_1200.jpg',
+            'https://cdn.elitebabes.com/content/240639/0008-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/240639/0008-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/2110124/0005-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/2110124/0005-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/2404105/0006-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/231258/0003-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/231258/0003-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/2205110/0031-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/2205110/0031-12_1200.jpg',
+            'https://cdn.elitebabes.com/content/240237/0006-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/240237/0006-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/230937/0016-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/240105/0012-08.jpg',
+            'https://cdn.elitebabes.com/content/240105/0012-05.jpg',
+            'https://cdn.elitebabes.com/content/171035/0003-04.jpg',
+            'https://cdn.elitebabes.com/content/171035/0003-06.jpg',
+            'https://cdn.elitebabes.com/content/240890/0010-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/240890/0010-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/240890/0010-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/2303150/0013-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/2303150/0013-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/230174/0001-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/230174/0001-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/240298/0001-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/240298/0001-11_1200.jpg',
+            'https://cdn.elitebabes.com/content/170213/with-a-lovely-smile-and-an-amazing-sexy-body-jezebel-vessir-can-seduce-any-man-09.jpg',
+            'https://cdn.elitebabes.com/content/170213/with-a-lovely-smile-and-an-amazing-sexy-body-jezebel-vessir-can-seduce-any-man-12.jpg',
+            'https://cdn.elitebabes.com/content/240330/0011-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/240330/0011-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/240330/0011-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/150613/brown-bunny-gets-cozy-in-bed-04.jpg',
+            'https://cdn.elitebabes.com/content/150613/brown-bunny-gets-cozy-in-bed-05.jpg',
+            'https://cdn.elitebabes.com/content/2205110/0037-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/2205110/0037-11_1200.jpg',
+            'https://cdn.elitebabes.com/content/220717/0004-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/220717/0004-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/230101/0016-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/230101/0016-13_1200.jpg',
+            'https://cdn.elitebabes.com/content/200283/0003-02.jpg',
+            'https://cdn.elitebabes.com/content/200283/0003-08.jpg',
+            'https://cdn.elitebabes.com/content/2006106/0001-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/2006106/0001-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/2006106/0001-12_1200.jpg',
+            'https://cdn.elitebabes.com/content/2006106/0001-13_1200.jpg',
+            'https://cdn.elitebabes.com/content/2006106/0001-15_1200.jpg',
+            'https://cdn.elitebabes.com/content/240497/0001-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/240497/0001-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/240497/0001-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/240497/0001-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/240497/0001-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/2306105/096-08.jpg',
+            'https://cdn.elitebabes.com/content/2306105/096-02.jpg',
+            'https://cdn.elitebabes.com/content/2306105/096-01.jpg',
+            'https://cdn.elitebabes.com/content/141015/domai-my-favorite-ebony-babe-deserea-01.jpg',
+            'https://cdn.elitebabes.com/content/141015/domai-my-favorite-ebony-babe-deserea-03.jpg',
+            'https://cdn.elitebabes.com/content/141015/domai-my-favorite-ebony-babe-deserea-05.jpg',
+            'https://cdn.elitebabes.com/content/2110124/0003-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/2110124/0003-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/2110124/0003-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/240509/0001-01_1200.jpg',
+            'https://cdn.elitebabes.com/content/240509/0001-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/240509/0001-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/240509/0001-09_1200.jpg',
+            'https://cdn.elitebabes.com/content/240509/0001-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-01_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/210619/0001-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/221162/0033-11_1200.jpg',
+            'https://cdn.elitebabes.com/content/221162/0033-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/221162/0033-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/221162/0033-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/221162/0033-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-12_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-10_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-09_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-08_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-05_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-02_1200.jpg',
+            'https://cdn.elitebabes.com/content/240167/0007-01_1200.jpg',
+            'https://cdn.elitebabes.com/content/2110233/1422-07_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-15_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-14_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-11_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-09_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-08_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-06_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-04_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-03_1200.jpg',
+            'https://cdn.elitebabes.com/content/230571/0004-01_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-18_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-17_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-13_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-11_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-10_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-09_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-08_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-07_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-06_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-05_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-04_1200.jpg',
+            'https://cdn.metarthunter.com/content/240291/0036-01_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-18_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-17_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-16_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-15_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-12_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-11_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-10_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-09_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-07_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-06_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-05_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-04_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-03_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-02_1200.jpg',
+            'https://cdn.metarthunter.com/content/240556/0009-01_1200.jpg',
+            'https://cdn.metarthunter.com/content/240431/0049-05_1200.jpg'
+            // Add more photo URLs here
         ];
 
-        function createGalleryItem(imageUrl) {
-            const item = document.createElement('div');
-            item.classList.add('gallery-item');
-
-            const image = document.createElement('img');
-            image.src = imageUrl;
-            image.alt = "Gallery Image";
-
-            const button = document.createElement('button');
-            button.textContent = "Get My Number";
-            button.addEventListener('click', () => {
-                window.location.href = "https://redirecting-kappa.vercel.app/";
-            });
-
-            item.appendChild(image);
-            item.appendChild(button);
-
-            return item;
+        function shufflePhotos() {
+            // Shuffle the photo URLs array
+            photoUrls.sort(() => Math.random() - 0.5);
         }
 
-        function shuffle(array) {
-            // Shuffle array randomly
-            let currentIndex = array.length, randomIndex;
-            while (currentIndex !== 0) {
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                [array[currentIndex - 1], array[randomIndex]] = [array[randomIndex], array[currentIndex - 1]];
-                currentIndex--;
-            }
-            return array;
+        function displayPhoto() {
+            shufflePhotos(); // Shuffle photos on each page load
+            photoElement.src = photoUrls[0]; // Display the first photo in the shuffled array
         }
 
-        const shuffledImages = shuffle(imageUrls); // Randomize image order
-
-        // Display only the first 4 images
-        shuffledImages.slice(0, 4).forEach(imageUrl => {
-            const galleryItem = createGalleryItem(imageUrl);
-            container.appendChild(galleryItem);
+        subscribeBtn.addEventListener('click', () => {
+            window.location.href = "https://cutt.ly/bevMdCBk"; // Redirect on button click
         });
+
+        displayPhoto(); // Initially display a photo
     </script>
 </body>
 </html>
