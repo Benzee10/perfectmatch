@@ -27,19 +27,39 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        #subscribe-btn {
+        #subscribe-btn, #join-btn, #whatsapp-btn {
             padding: 15px 30px;
             border: none;
             border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
             cursor: pointer;
             font-size: 18px;
+            color: white;
             margin-top: 20px;
+        }
+
+        #subscribe-btn {
+            background-color: #4CAF50;
         }
 
         #subscribe-btn:hover {
             background-color: #3e8e41;
+        }
+
+        #join-btn {
+            background-color: #0088cc;
+        }
+
+        #join-btn:hover {
+            background-color: #0077b3;
+        }
+
+        #whatsapp-btn {
+            background-color: #25D366; /* WhatsApp green */
+            margin-bottom: 20px;
+        }
+
+        #whatsapp-btn:hover {
+            background-color: #22b358;
         }
 
         #telegram-icon {
@@ -48,19 +68,6 @@
             margin-top: 10px;
         }
 
-        #join-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0088cc;
-            color: white;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        #join-btn:hover {
-            background-color: #0077b3;
-        }
     </style>
 </head>
 <body>
@@ -73,16 +80,16 @@
         <div>
             <img id="telegram-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrw9I2kkBmUrd7vL9YyZAAycOaRS-OKRZqg&usqp=CAU" alt="Telegram Icon">
             <button id="join-btn">Join Telegram to Watch Free Videos</button>
-            
-            <img id="Whatsapp-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrw9I2kkBmUrd7vL9YyZAAycOaRS-OKRZqg&usqp=CAU" alt="Whatsapp Icon">
-            <button id="joint-btn">Join Whatsapp Group</button>
         </div>
+        <!-- Add WhatsApp button -->
+        <button id="whatsapp-btn">Join WhatsApp Group</button>
     </div>
+
     <script>
         const videoElement = document.getElementById('video');
         const subscribeBtn = document.getElementById('subscribe-btn');
         const joinBtn = document.getElementById('join-btn');
-        const jointBtn = document.getElementById('joint-btn');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
         const videoUrls = [
             "https://video.twimg.com/ext_tw_video/1544808646072229888/pu/vid/720x1124/z_A1dqkOSm3Ht2g-.mp4?tag=12",
             "https://video.twimg.com/ext_tw_video/1837134244914585600/pu/vid/avc1/720x1280/URimxBokqSvFlItx.mp4?tag=12",
@@ -107,31 +114,30 @@
             "",
             // Add more video URLs here
         ];
-
         function shuffleVideos() {
-            // Shuffle the video URLs array
             videoUrls.sort(() => Math.random() - 0.5);
         }
 
         function displayVideo() {
-            shuffleVideos(); // Shuffle video URLs on each page load
-            videoElement.src = videoUrls[0]; // Display the first video in the shuffled array
-            videoElement.load(); // Load the new video
+            shuffleVideos();
+            videoElement.src = videoUrls[0];
+            videoElement.load();
         }
 
         subscribeBtn.addEventListener('click', () => {
-            window.location.href = "https://cutt.ly/bevMdCBk"; // Redirect on button click
+            window.location.href = "https://cutt.ly/bevMdCBk";
         });
 
         joinBtn.addEventListener('click', () => {
-            window.open('https://t.me/+468HjVpBjBc3MTA0', '_blank'); // Replace with your channel link
+            window.open('https://t.me/+468HjVpBjBc3MTA0', '_blank');
         });
 
-        jointBtn.addEventListener('click', () => {
-            window.open('https://redirecting-kappa.vercel.app/', '_blank'); // Replace with your channel link
+        // WhatsApp button functionality
+        whatsappBtn.addEventListener('click', () => {
+            window.open('https://wa.me/1234567890', '_blank'); // Replace with your WhatsApp link
         });
 
-        displayVideo(); // Initially display a video
+        displayVideo();
     </script>
 </body>
 </html>
