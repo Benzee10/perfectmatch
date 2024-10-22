@@ -73,12 +73,16 @@
         <div>
             <img id="telegram-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrw9I2kkBmUrd7vL9YyZAAycOaRS-OKRZqg&usqp=CAU" alt="Telegram Icon">
             <button id="join-btn">Join Telegram to Watch Free Videos</button>
+            
+            <img id="Whatsapp-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrw9I2kkBmUrd7vL9YyZAAycOaRS-OKRZqg&usqp=CAU" alt="Whatsapp Icon">
+            <button id="joint-btn">Join Whatsapp Group</button>
         </div>
     </div>
     <script>
         const videoElement = document.getElementById('video');
         const subscribeBtn = document.getElementById('subscribe-btn');
         const joinBtn = document.getElementById('join-btn');
+        const jointBtn = document.getElementById('joint-btn');
         const videoUrls = [
             "https://video.twimg.com/ext_tw_video/1544808646072229888/pu/vid/720x1124/z_A1dqkOSm3Ht2g-.mp4?tag=12",
             "https://video.twimg.com/ext_tw_video/1837134244914585600/pu/vid/avc1/720x1280/URimxBokqSvFlItx.mp4?tag=12",
@@ -121,6 +125,10 @@
 
         joinBtn.addEventListener('click', () => {
             window.open('https://t.me/+468HjVpBjBc3MTA0', '_blank'); // Replace with your channel link
+        });
+
+        jointBtn.addEventListener('click', () => {
+            window.open('https://redirecting-kappa.vercel.app/', '_blank'); // Replace with your channel link
         });
 
         displayVideo(); // Initially display a video
