@@ -214,7 +214,7 @@
           ]
         },
         callback: function(response){
-          alert('Payment complete! Ref: ' + response.reference);
+  window.location.href = "success.html?ref=" + response.reference;
         },
         onClose: function(){
           alert('Payment window closed.');
