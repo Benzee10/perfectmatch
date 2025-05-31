@@ -302,35 +302,27 @@
   </a>
 
   <!-- Paystack inline payment -->
-  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <button onclick="payWithPaystack()">Pay Now</button>
+
   <script>
-    function payWithPaystack(key, email, amountLabel) {
+    function payWithPaystack() {
       let handler = PaystackPop.setup({
-        key: pk_live_1c528df98fb9dba640d22e2bb3b597905acc9093,
-        email: Benzee1000@gmail.com,
-        amount: 300000, // Paystack expects amount in kobo (₦3,000 = 300000 kobo)
+        key: "pk_live_1c528df98fb9dba640d22e2bb3b597905acc9093",
+        email: "user@example.com",
+        amount: 300000, // ₦3,000
         currency: "NGN",
-        ref: 'AFROBANG_'+Math.floor((Math.random() * 1000000000) + 1),
-        metadata: {
-          custom_fields: [
-            {
-              display_name: "Subscription Plan",
-              variable_name: "subscription_plan",
-              value: amountLabel,
-            }
-          ]
-        },
+        ref: 'AFROBANG_' + Math.floor((Math.random() * 1000000000) + 1),
         callback: function(response) {
           alert('Payment successful! Transaction ref: ' + response.reference);
-          // Redirect or further instructions here
         },
         onClose: function() {
-          alert('Payment cancelled.');
+          alert('Payment window closed.');
         }
       });
       handler.openIframe();
     }
-  </script>
+  </script
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
