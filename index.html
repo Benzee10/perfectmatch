@@ -9,58 +9,158 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f7f4f2;
+      background: #f7f4f2; /* Light earthy tone */
       color: #333;
+      line-height: 1.6;
     }
     header {
-      background: #000;
+      background: #333; /* Dark grey instead of black */
       color: #fff;
       padding: 2rem;
       text-align: center;
     }
     h1 {
-      margin: 0;
+      margin: 0 0 0.5rem 0;
       font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: -0.02em;
     }
-    .cta-button {
-      display: none;
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.8;
     }
     section {
       padding: 3rem 1.5rem;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 2rem auto; /* Add some top/bottom margin to sections */
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05); /* Slightly softer shadow */
+    }
+    h2 {
+      color: #222;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
     .steps {
       display: grid;
       gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More flexible grid */
     }
     .step {
-      background: #fff;
+      background: #f9f9f9; /* Lighter background for steps */
       padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      border-left: 5px solid #cc9900; /* Accent color */
+    }
+    .step h3 {
+      margin-top: 0;
+      color: #444;
+      font-size: 1.2rem;
+    }
+    .pricing {
+      margin-top: 2.5rem;
+      padding: 2rem;
+      background: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
-    .pricing {
-      background: #fff;
-      padding: 2rem;
+    .pricing h2 {
+      margin-bottom: 1.8rem;
+    }
+    .pricing ul {
+      list-style: none;
+      padding: 0;
+    }
+    .pricing li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .pricing li:last-child {
+      border-bottom: none;
+    }
+    .pricing em {
+      font-style: italic;
+      color: #777;
+      display: block;
+      margin-top: 1rem;
+    }
+    .preview {
+      margin-top: 3rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+    .preview h3 {
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+    .preview-hint {
+      background-color: #f0f0f0;
+      color: #777;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .preview img {
+      max-width: 250px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      margin-top: 2rem;
+      filter: blur(3px); /* Slightly less blur */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .preview p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 0.5rem;
     }
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      padding: 2rem;
+      font-size: 0.85rem;
+      padding: 2rem 1.5rem;
       color: #777;
+      margin-top: 3rem;
+      background: #f0f0f0; /* Light background for footer */
+      border-top: 1px solid #eee;
     }
-    .preview {
-      margin-top: 2rem;
-      text-align: center;
+    .cta-button {
+      display: inline-block;
+      background-color: #cc9900;
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      margin-top: 1rem;
     }
-    .preview img {
-      max-width: 200px;
-      border-radius: 10px;
-      filter: blur(5px);
+    .cta-button:hover {
+      background-color: #b38800;
+    }
+    .pricing-list {
+      list-style: none;
+      padding: 0;
+    }
+    .pricing-list li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pricing-list li:last-child {
+      border-bottom: none;
+    }
+    .pricing-list .price {
+      font-weight: bold;
+      color: #555;
+    }
+    .payment-info {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -89,26 +189,39 @@
 
     <div class="pricing">
       <h2>VIP Group Pricing</h2>
-      <ul>
-        <li><strong>Nigeria VIP Group</strong> – ₦3,000/month</li>
-        <li><strong>Ghana VIP Group</strong> – ₦4,500/month (₵50)</li>
-        <li><strong>Kenya VIP Group</strong> – ₦3,800/month (KSh 500)</li>
-        <li><strong>All Access (All Countries)</strong> – ₦12,000/month or $15</li>
-        <li><strong>Premium Trial (Any Country)</strong> – ₦1,000 for 3 Days</li>
+      <ul class="pricing-list">
+        <li><span>Nigeria VIP Group</span> <span class="price">₦3,000/month</span></li>
+        <li><span>Ghana VIP Group</span> <span class="price">₦4,500/month (₵50)</span></li>
+        <li><span>Kenya VIP Group</span> <span class="price">₦3,800/month (KSh 500)</span></li>
+        <li><span>All Access (All Countries)</span> <span class="price">₦12,000/month or $15</span></li>
+        <li><span>Premium Trial (Any Country - 3 Days)</span> <span class="price">₦1,000</span></li>
       </ul>
-      <p><em>Payment methods: Bank Transfer, MoMo, USDT</em></p>
+      <p class="payment-info"><em>Payment methods: Bank Transfer, MoMo, USDT</em></p>
 
       <div style="margin-top: 20px; text-align: center;">
-        <button onclick="payWithPaystack()" style="background-color:#cc9900; color:#000; padding:10px 20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
-          Subscribe Now – ₦3,000
+        <button onclick="payWithPaystack('PLN_0xupvknb16pecti', 'Benzee1000@gmail.com', '₦3,000 - Nigeria VIP Group')" class="cta-button">
+          Subscribe Now – Nigeria (₦3,000/month)
+        </button>
+        <button onclick="alert('Payment for Ghana VIP Group is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
+          Subscribe Ghana (₵50/month) - Contact WhatsApp
+        </button>
+        <button onclick="alert('Payment for Kenya VIP Group is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
+          Subscribe Kenya (KSh 500/month) - Contact WhatsApp
+        </button>
+        <button onclick="alert('Payment for All Access is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
+          Subscribe All Access ($15/month) - Contact WhatsApp
+        </button>
+        <button onclick="alert('Payment for Premium Trial is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
+          Get Premium Trial (₦1,000 - 3 Days) - Contact WhatsApp
         </button>
       </div>
     </div>
 
     <div class="preview">
       <h3>Sample Preview</h3>
-      <img src="https://via.placeholder.com/200x300.png?text=Sample+Preview" alt="Blurred Preview" />
-      <p>Daily posts include photos, rates & contact info. Group members only 🔞</p>
+      <div class="preview-hint">Discreet glimpses of what awaits you in our VIP groups.</div>
+      <img src="https://via.placeholder.com/250x350.png?text=Subtle+Hint" alt="Subtle Preview" style="filter: blur(2px);" />
+      <p>Daily posts include tasteful photos, rates & contact info. Exclusive to group members 🔞</p>
     </div>
   </section>
 
@@ -118,13 +231,13 @@
 
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <script>
-    function payWithPaystack() {
+    function payWithPaystack(plan, email, amountText) {
       var handler = PaystackPop.setup({
         key: 'pk_live_1c528df98fb9dba640d22e2bb3b597905acc9093',
-        email: 'Benzee1000@gmail.com',
-        plan: 'PLN_0xupvknb16pecti',
+        email: email,
+        plan: plan,
         callback: function(response){
-          alert('Payment complete! Reference: ' + response.reference);
+          alert('Payment for ' + amountText + ' complete! Reference: ' + response.reference);
         },
         onClose: function(){
           alert('Payment window closed.');
@@ -134,7 +247,6 @@
     }
   </script>
 
-  <!-- WhatsApp Widget -->
   <script type="text/javascript">
     (function () {
       var options = {
@@ -149,4 +261,4 @@
     })();
   </script>
 </body>
-</html>
+      </html>
