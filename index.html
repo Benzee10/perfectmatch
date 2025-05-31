@@ -2,170 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="AfroBang – Get access to elite companionship across Africa. Join our VIP groups for verified, discreet adult services in Nigeria, Ghana, Kenya & more." />
   <title>AfroBang – VIP Access to Elite Companions in Africa</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f7f4f2; /* Light earthy tone */
+      background: #f7f4f2;
       color: #333;
-      line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 60px; /* space for floating widget */
     }
     header {
-      background: #333; /* Dark grey instead of black */
+      position: relative;
       color: #fff;
-      padding: 2rem;
       text-align: center;
+      padding: 6rem 1rem 4rem;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      filter: brightness(0.6);
     }
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: -0.02em;
+    header > div {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
     }
     header p {
-      font-size: 1.1rem;
-      opacity: 0.8;
+      font-size: 1.25rem;
+      font-weight: 400;
     }
     section {
       padding: 3rem 1.5rem;
       max-width: 800px;
-      margin: 2rem auto; /* Add some top/bottom margin to sections */
+      margin: 0 auto;
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.05); /* Slightly softer shadow */
-    }
-    h2 {
-      color: #222;
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-top: -80px; /* overlap on header bottom */
+      position: relative;
+      z-index: 3;
     }
     .steps {
       display: grid;
       gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More flexible grid */
     }
     .step {
-      background: #f9f9f9; /* Lighter background for steps */
+      background: #fafafa;
       padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-      border-left: 5px solid #cc9900; /* Accent color */
-    }
-    .step h3 {
-      margin-top: 0;
-      color: #444;
-      font-size: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
     }
     .pricing {
-      margin-top: 2.5rem;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .pricing h2 {
-      margin-bottom: 1.8rem;
+      margin-top: 2rem;
     }
     .pricing ul {
-      list-style: none;
-      padding: 0;
+      list-style-type: none;
+      padding-left: 0;
     }
     .pricing li {
-      padding: 0.7rem 0;
+      padding: 0.5rem 0;
+      font-weight: 600;
       border-bottom: 1px solid #eee;
     }
     .pricing li:last-child {
       border-bottom: none;
     }
     .pricing em {
-      font-style: italic;
-      color: #777;
-      display: block;
-      margin-top: 1rem;
-    }
-    .preview {
-      margin-top: 3rem;
-      text-align: center;
-      opacity: 0.9;
-    }
-    .preview h3 {
+      font-weight: 400;
+      font-size: 0.9rem;
       color: #555;
-      margin-bottom: 0.8rem;
     }
-    .preview-hint {
-      background-color: #f0f0f0;
-      color: #777;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    .preview img {
-      max-width: 250px;
-      border-radius: 10px;
-      filter: blur(3px); /* Slightly less blur */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .preview p {
-      font-size: 0.95rem;
-      color: #666;
-      margin-top: 0.5rem;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      padding: 2rem 1.5rem;
-      color: #777;
-      margin-top: 3rem;
-      background: #f0f0f0; /* Light background for footer */
-      border-top: 1px solid #eee;
-    }
-    .cta-button {
+    .btn-pay {
       display: inline-block;
+      margin-top: 20px;
       background-color: #cc9900;
       color: #000;
-      padding: 12px 24px;
+      padding: 12px 28px;
       font-weight: bold;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-      margin-top: 1rem;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(204,153,0,0.4);
+      transition: background-color 0.3s ease;
     }
-    .cta-button:hover {
-      background-color: #b38800;
+    .btn-pay:hover {
+      background-color: #b38700;
     }
-    .pricing-list {
-      list-style: none;
-      padding: 0;
+    .preview {
+      margin-top: 2rem;
+      text-align: center;
+      color: #444;
     }
-    .pricing-list li {
-      padding: 0.7rem 0;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .preview img {
+      max-width: 200px;
+      border-radius: 10px;
+      filter: blur(6px);
+      user-select: none;
     }
-    .pricing-list li:last-child {
-      border-bottom: none;
-    }
-    .pricing-list .price {
-      font-weight: bold;
-      color: #555;
-    }
-    .payment-info {
-      font-size: 0.9em;
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 2rem 1rem 1rem;
       color: #777;
-      margin-top: 0.5rem;
+    }
+    /* WhatsApp Floating Button */
+    #whatsapp-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    #whatsapp-widget:hover {
+      background-color: #1ebe57;
+    }
+    #whatsapp-widget svg {
+      fill: white;
+      width: 32px;
+      height: 32px;
     }
   </style>
 </head>
 <body>
+
   <header>
+    <div></div>
     <h1>AfroBang</h1>
     <p>VIP Access to Elite Companions Across Africa</p>
   </header>
@@ -189,39 +174,22 @@
 
     <div class="pricing">
       <h2>VIP Group Pricing</h2>
-      <ul class="pricing-list">
-        <li><span>Nigeria VIP Group</span> <span class="price">₦3,000/month</span></li>
-        <li><span>Ghana VIP Group</span> <span class="price">₦4,500/month (₵50)</span></li>
-        <li><span>Kenya VIP Group</span> <span class="price">₦3,800/month (KSh 500)</span></li>
-        <li><span>All Access (All Countries)</span> <span class="price">₦12,000/month or $15</span></li>
-        <li><span>Premium Trial (Any Country - 3 Days)</span> <span class="price">₦1,000</span></li>
+      <ul>
+        <li><strong>Nigeria VIP Group</strong> – ₦3,000/month</li>
+        <li><strong>Ghana VIP Group</strong> – ₦4,500/month (₵50)</li>
+        <li><strong>Kenya VIP Group</strong> – ₦3,800/month (KSh 500)</li>
+        <li><strong>All Access (All Countries)</strong> – ₦12,000/month or $15</li>
+        <li><strong>Premium Trial (Any Country)</strong> – ₦1,000 for 3 Days</li>
       </ul>
-      <p class="payment-info"><em>Payment methods: Bank Transfer, MoMo, USDT</em></p>
+      <p><em>Payment methods: Bank Transfer, MoMo, USDT</em></p>
 
-      <div style="margin-top: 20px; text-align: center;">
-        <button onclick="payWithPaystack('PLN_0xupvknb16pecti', 'Benzee1000@gmail.com', '₦3,000 - Nigeria VIP Group')" class="cta-button">
-          Subscribe Now – Nigeria (₦3,000/month)
-        </button>
-        <button onclick="alert('Payment for Ghana VIP Group is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
-          Subscribe Ghana (₵50/month) - Contact WhatsApp
-        </button>
-        <button onclick="alert('Payment for Kenya VIP Group is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
-          Subscribe Kenya (KSh 500/month) - Contact WhatsApp
-        </button>
-        <button onclick="alert('Payment for All Access is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
-          Subscribe All Access ($15/month) - Contact WhatsApp
-        </button>
-        <button onclick="alert('Payment for Premium Trial is not directly integrated yet. Please contact via WhatsApp.')" class="cta-button" style="background-color:#777;">
-          Get Premium Trial (₦1,000 - 3 Days) - Contact WhatsApp
-        </button>
-      </div>
+      <button class="btn-pay" onclick="payWithPaystack()">Subscribe Now – ₦3,000</button>
     </div>
 
     <div class="preview">
       <h3>Sample Preview</h3>
-      <div class="preview-hint">Discreet glimpses of what awaits you in our VIP groups.</div>
-      <img src="https://via.placeholder.com/250x350.png?text=Subtle+Hint" alt="Subtle Preview" style="filter: blur(2px);" />
-      <p>Daily posts include tasteful photos, rates & contact info. Exclusive to group members 🔞</p>
+      <img src="https://via.placeholder.com/200x300.png?text=Sample+Preview" alt="Blurred Preview" />
+      <p>Daily posts include photos, rates & contact info. Group members only 🔞</p>
     </div>
   </section>
 
@@ -229,15 +197,16 @@
     <p>This platform does not promote or facilitate illegal activity. All companions are independent and above 18. Content is for mature audiences only (18+).</p>
   </footer>
 
+  <!-- Paystack -->
   <script src="https://js.paystack.co/v1/inline.js"></script>
   <script>
-    function payWithPaystack(plan, email, amountText) {
+    function payWithPaystack() {
       var handler = PaystackPop.setup({
         key: 'pk_live_1c528df98fb9dba640d22e2bb3b597905acc9093',
-        email: email,
-        plan: plan,
+        email: 'Benzee1000@gmail.com',
+        plan: 'PLN_0xupvknb16pecti',
         callback: function(response){
-          alert('Payment for ' + amountText + ' complete! Reference: ' + response.reference);
+          alert('Payment complete! Reference: ' + response.reference);
         },
         onClose: function(){
           alert('Payment window closed.');
@@ -247,18 +216,21 @@
     }
   </script>
 
-  <script type="text/javascript">
-    (function () {
-      var options = {
-        whatsapp: "+27833299586",
-        call_to_action: "Chat with us",
-        position: "right",
-      };
-      var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
-      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
+  <!-- WhatsApp Floating Button -->
+  <div id="whatsapp-widget" title="Chat with us on WhatsApp" onclick="openWhatsApp()">
+    <svg viewBox="0 0 24 24">
+      <path d="M20.52 3.48a11.62 11.62 0 0 0-16.44 16.44l-1.98 4.86 5-1.3a11.62 11.62 0 0 0 13.42-19.99zm-8.97 14.21c-1.78 0-3.53-.53-4.99-1.52l-.36-.22-2.95.77.79-2.87-.24-.38a7.72 7.72 0 0 1-1.18-4.36c0-4.27 3.46-7.74 7.73-7.74 2.07 0 4.02.8 5.48 2.26a7.7 7.7 0 0 1 2.26 5.48c0 4.27-3.47 7.74-7.74 7.74zm3.97-4.8c-.22-.11-1.3-.64-1.5-.71-.2-.07-.34-.11-.48.11-.13.22-.5.71-.62.86-.12.15-.24.17-.45.06-.2-.12-.85-.31-1.62-1-.6-.54-1-1.21-1.12-1.41-.12-.2-.01-.31.09-.41.09-.09.2-.24.3-.36.1-.12.13-.21.2-.35.07-.13.03-.24-.01-.35-.05-.12-.48-1.15-.66-1.58-.17-.41-.35-.35-.48-.36l-.41-.01c-.14 0-.36.05-.55.24-.18.18-.7.69-.7 1.69 0 1 .72 1.97.82 2.11.1.14 1.41 2.15 3.42 3.01.48.21.85.34 1.14.44.48.16.91.14 1.25.09.38-.06 1.3-.53 1.48-1.04.18-.52.18-.96.13-1.04-.04-.07-.18-.12-.4-.22z"/>
+    </svg>
+  </div>
+
+  <script>
+    function openWhatsApp() {
+      var phone = '+27833299586';
+      var message = encodeURIComponent("Hi, I'm interested in the VIP Group");
+      var url = `https://wa.me/${phone.replace(/\D/g, '')}?text=${message}`;
+      window.open(url, '_blank');
+    }
   </script>
+
 </body>
-      </html>
+</html>
