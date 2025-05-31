@@ -1,143 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>See More Videos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        #video {
-            margin-top: 20px;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #subscribe-btn, #join-btn, #whatsapp-btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            color: white;
-            margin-top: 20px;
-        }
-
-        #subscribe-btn {
-            background-color: #4CAF50;
-        }
-
-        #subscribe-btn:hover {
-            background-color: #3e8e41;
-        }
-
-        #join-btn {
-            background-color: #0088cc;
-        }
-
-        #join-btn:hover {
-            background-color: #0077b3;
-        }
-
-        #whatsapp-btn {
-            background-color: #25D366; /* WhatsApp green */
-            margin-bottom: 20px;
-        }
-
-        #whatsapp-btn:hover {
-            background-color: #22b358;
-        }
-
-        #telegram-icon {
-            width: 90%;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AfroBang – Get access to elite companionship across Africa. Join our VIP groups for verified, discreet adult services in Nigeria, Ghana, Kenya & more." />
+  <title>AfroBang – VIP Access to Elite Companions in Africa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f7f4f2;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #cc9900;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .steps {
+      display: grid;
+      gap: 2rem;
+    }
+    .step {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .pricing {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-top: 2rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 2rem;
+      color: #777;
+    }
+    .preview {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .preview img {
+      max-width: 200px;
+      border-radius: 10px;
+      filter: blur(5px);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <video id="video" autoplay muted loop controls>
-            <source src="" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <button id="subscribe-btn">Subscribe Now to See Full Video</button>
-        <div>
-            <img id="telegram-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrw9I2kkBmUrd7vL9YyZAAycOaRS-OKRZqg&usqp=CAU" alt="Telegram Icon">
-            <button id="join-btn">Join Telegram to Watch Free Videos</button>
-        </div>
-        <!-- Add WhatsApp button -->
-        <button id="whatsapp-btn">Join WhatsApp Group</button>
+  <header>
+    <h1>AfroBang</h1>
+    <p>VIP Access to Elite Companions Across Africa</p>
+    <a href="https://wa.me/2348123456789?text=Hi%20AfroBang%20Team%2C%20I%20want%20VIP%20access" class="cta-button">Join VIP Group Now</a>
+  </header>
+
+  <section>
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Step 1: Choose Your Country</h3>
+        <p>Select a group for Nigeria, Ghana, Kenya or more based on your location.</p>
+      </div>
+      <div class="step">
+        <h3>Step 2: Make Payment</h3>
+        <p>Send payment via Bank Transfer, Mobile Money or Crypto (USDT/BTC).</p>
+      </div>
+      <div class="step">
+        <h3>Step 3: Get VIP Access</h3>
+        <p>Receive full access to verified daily updates of companions in your region.</p>
+      </div>
     </div>
 
-    <script>
-        const videoElement = document.getElementById('video');
-        const subscribeBtn = document.getElementById('subscribe-btn');
-        const joinBtn = document.getElementById('join-btn');
-        const whatsappBtn = document.getElementById('whatsapp-btn');
-        const videoUrls = [
-            "https://video.twimg.com/ext_tw_video/1544808646072229888/pu/vid/720x1124/z_A1dqkOSm3Ht2g-.mp4?tag=12",
-            "https://video.twimg.com/ext_tw_video/1837134244914585600/pu/vid/avc1/720x1280/URimxBokqSvFlItx.mp4?tag=12",
-            "https://video.twimg.com/amplify_video/1793299270499803137/vid/avc1/720x1280/2jAS4Kxxd2LXN1jF.mp4?tag=14",
-            "https://video.twimg.com/ext_tw_video/1668840756109529088/pu/vid/1080x608/8GKYoMynVGaKBZOc.mp4?tag=12",
-            "https://video.twimg.com/amplify_video/1785776819356225536/vid/avc1/1278x720/NVKFhthdhBt8za6w.mp4?tag=14",
-            "https://video.twimg.com/amplify_video/1834672291650977794/vid/avc1/1920x1080/oxhdLprcqktc-dq7.mp4?tag=16",
-            "https://video.twimg.com/amplify_video/1841877900401782792/vid/avc1/1920x1080/efiYJLvc8UUdzPP7.mp4?tag=16",
-            "https://video.twimg.com/amplify_video/1841091024770269192/vid/avc1/1920x1080/H8iXboKtnb3izzdw.mp4?tag=16",
-            "https://video.twimg.com/ext_tw_video/1841810424380915712/pu/vid/avc1/720x1280/ujUW6H10kD2m2StP.mp4?tag=12",
-            "https://video.twimg.com/amplify_video/1837926442228719616/vid/avc1/720x966/xiRcnhqJRwjFE6mS.mp4?tag=16",
-            "https://video.twimg.com/amplify_video/1839658635246321664/vid/avc1/1080x1920/3UNh52urfRvPbPQP.mp4?tag=16",
-            "https://video.twimg.com/ext_tw_video/1836398328403185664/pu/vid/avc1/720x1280/5mP9LuUQAwXh_mWR.mp4?tag=12",
-            "https://video.twimg.com/ext_tw_video/1837134782871838720/pu/vid/avc1/720x960/FleySGAwBNlYt3Ei.mp4?tag=12",
-            "https://video.twimg.com/ext_tw_video/1837134401605345281/pu/vid/avc1/720x960/uNndnhiIn3H99CJP.mp4?tag=12",
-            "https://video.twimg.com/amplify_video/1832636772859416576/vid/avc1/1080x1920/9-MbHnSE_JdIsYO9.mp4?tag=16",
-            "https://video.twimg.com/amplify_video/1759365539565297664/vid/avc1/720x1280/JLKnYmnQCDvI7N6e.mp4?tag=14",
-            "https://video.twimg.com/amplify_video/1807989295766294532/vid/avc1/1080x1920/6hzsajqCPTaSw2ai.mp4?tag=16",
-            "https://video.twimg.com/amplify_video/1715004141490315264/vid/avc1/720x960/ytceyi5voSoDTOrF.mp4?tag=14",
-            "https://video.twimg.com/amplify_video/1807989295787266051/vid/avc1/1080x1920/dvv0fXIVpJ2paMIN.mp4?tag=16",
-            "https://video.twimg.com/amplify_video/1731729223113662464/vid/avc1/720x1280/b2n5BcFsdK9enyct.mp4?tag=14",
-            "",
-            // Add more video URLs here
-        ];
-        function shuffleVideos() {
-            videoUrls.sort(() => Math.random() - 0.5);
+    <div class="pricing">
+      <h2>VIP Group Pricing</h2>
+      <ul>
+        <li><strong>Nigeria VIP Group</strong> – ₦3,000/month</li>
+        <li><strong>Ghana VIP Group</strong> – ₦4,500/month (₵50)</li>
+        <li><strong>Kenya VIP Group</strong> – ₦3,800/month (KSh 500)</li>
+        <li><strong>All Access (All Countries)</strong> – ₦12,000/month or $15</li>
+        <li><strong>Premium Trial (Any Country)</strong> – ₦1,000 for 3 Days</li>
+      </ul>
+      <p><em>Payment methods: Bank Transfer, MoMo, USDT</em></p>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <button onclick="payWithPaystack()" style="background-color:#cc9900; color:#000; padding:10px 20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+          Subscribe Now – ₦3,000
+        </button>
+      </div>
+
+    </div>
+
+    <div class="preview">
+      <h3>Sample Preview</h3>
+      <img src="https://via.placeholder.com/200x300.png?text=Sample+Preview" alt="Blurred Preview" />
+      <p>Daily posts include photos, rates & contact info. Group members only 🔞</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>This platform does not promote or facilitate illegal activity. All companions are independent and above 18. Content is for mature audiences only (18+).</p>
+  </footer>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script>
+    function payWithPaystack() {
+      var handler = PaystackPop.setup({
+        key: 'pk_live_1c528df98fb9dba640d22e2bb3b597905acc9093',
+        email: 'customer@email.com',
+        plan: 'PLN_0xupvknb16pecti',
+        callback: function(response){
+          alert('Payment complete! Reference: ' + response.reference);
+        },
+        onClose: function(){
+          alert('Payment window closed.');
         }
-
-        function displayVideo() {
-            shuffleVideos();
-            videoElement.src = videoUrls[0];
-            videoElement.load();
-        }
-
-        subscribeBtn.addEventListener('click', () => {
-            window.location.href = "https://whilsttypewriter.com/b55qv0vprr?key=ce746f659eb6e784954af7caf958cda9";
-        });
-
-        joinBtn.addEventListener('click', () => {
-            window.open('https://t.me/ebonyciti', '_blank');
-        });
-
-        // WhatsApp button functionality
-        whatsappBtn.addEventListener('click', () => {
-            window.open('https://clcr.me/ofNTby', '_blank'); // Replace with your WhatsApp link
-        });
-
-        displayVideo();
-    </script>
+      });
+      handler.openIframe();
+    }
+  </script>
 </body>
 </html>
